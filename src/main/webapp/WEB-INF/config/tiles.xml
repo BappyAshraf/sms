@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="base.definition" template="/WEB-INF/views/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/views/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<!-- <put-attribute name="footer" value="/WEB-INF/views/footer.jsp" /> -->
+	</definition>
+
+	<definition name="null.definition" template="/WEB-INF/views/layout2.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="user.definition" template="/WEB-INF/views/layout3.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+	</definition>
+
+	<definition name="withoutMenu.definition" template="/WEB-INF/views/layoutWithoutMenu.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/views/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp" />
+	</definition>
+
+	<definition name="popup.definition" template="/WEB-INF/views/layout4.jsp">
+		<put-attribute name="title" value="" />
+		<!-- <put-attribute name="body" value="" /> -->
+	</definition>
+
+	<!-- ============================================================================================================================================ -->
+	<definition name="home" extends="base.definition">
+		<put-attribute name="title" value="Welcome Home" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+
+	<definition name="changePasswordFirst" extends="withoutMenu.definition">
+		<put-attribute name="title" value="Password Change" />
+		<put-attribute name="body" value="/WEB-INF/views/userPass.jsp" />
+	</definition>
+
+	<definition name="changePasswordInfo" extends="base.definition">
+		<put-attribute name="title" value="Password Change" />
+		<put-attribute name="body" value="/WEB-INF/views/user/userPass.jsp" />
+	</definition>
+
+	<!-- ============================Personal Identification================================================ -->
+
+	<definition name="personalIdentification" extends="base.definition">
+		<put-attribute name="title" value="Personal Identification" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/personalInfo/personalIdentification.jsp" />
+	</definition>
+
+</tiles-definitions>
